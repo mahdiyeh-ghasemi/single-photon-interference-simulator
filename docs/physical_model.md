@@ -276,7 +276,7 @@ The numerical implementation can be evaluated using the following physical and s
 The calculated probability density should satisfy the normalization condition over the detection interval:
 
 $$
-\int_{x_{\min}}^{x_{\max}}p(x)\,dx=1.
+\int_{-X_{\max}}^{+X_{\max}}p(x)\,dx=1.
 $$
 
 ### 9.2 Symmetry of the Interference Pattern
