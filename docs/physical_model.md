@@ -2,239 +2,319 @@
 
 ## 1. Objective
 
-This document establishes the physical and mathematical framework for a computational simulation of single-photon interference in a double-slit experiment.
+This document defines the theoretical and mathematical framework for simulating single-photon interference in a double-slit experiment.
 
-The main objective is to investigate the statistical emergence of an interference pattern through individual photon detection events and to study the corresponding probability distribution and photon counting statistics.
+The simulation describes how individual photon detection events, accumulated sequentially on a detection screen, produce an interference distribution consistent with the quantum-mechanical probability density.
 
-The model is formulated using quantum probability amplitudes, the Born rule, and scalar wave optics under the paraxial and Fraunhofer approximations.
+The model focuses on three aspects:
+
+1. Spatial interference distribution.
+2. Sequential accumulation of photon detection events.
+3. Statistical properties of photon counts.
+
+The present model assumes coherent illumination and does not include a which-path measurement.
 
 ## 2. Physical Configuration
 
-The system consists of a monochromatic single-photon source, a double-slit aperture, and a position-sensitive detection screen located at a distance \(L\) from the aperture.
+Consider a monochromatic photon with wavelength $\lambda$ incident on two identical parallel slits.
 
-The geometrical parameters are defined as:
+The relevant parameters are:
 
-- \(a\): width of each slit.
-- \(d\): center-to-center separation between the slits.
-- \(\lambda\): photon wavelength.
-- \(L\): propagation distance.
-- \(x\): transverse coordinate on the detection screen.
+- $a$: width of each slit.
+- $d$: center-to-center distance between the slits.
+- $L$: distance between the double slit and the detection screen.
+- $\lambda$: photon wavelength.
+- $x$: transverse coordinate on the detection screen.
 
-The slit centers are positioned at
+The slit centers are located at
 
-\[
+$$
 x_1=-\frac{d}{2},
 \qquad
 x_2=+\frac{d}{2}.
-\]
+$$
 
-## 3. Physical Assumptions
+We assume the Fraunhofer diffraction regime:
 
-The baseline model adopts the following assumptions:
+$$
+L\gg \frac{a^2}{\lambda},
+\qquad
+L\gg \frac{d^2}{\lambda}.
+$$
 
-1. Photons are emitted independently and detected one at a time.
-2. The incident photons are monochromatic and mutually coherent.
-3. Both slits are illuminated with equal probability amplitudes.
-4. The two slits have identical widths.
-5. Photon propagation is described using scalar wave optics.
-6. The paraxial approximation is valid.
-7. The detection screen is in the Fraunhofer regime.
-8. No which-path information is available.
-9. Photon detection events are statistically independent.
+Under this approximation, the transverse wave-vector component is
 
-## 4. Mathematical Formulation
+$$
+k_x \simeq \frac{2\pi x}{\lambda L}.
+$$
 
-### 4.1 Wave Number and Observation Angle
+## 3. Single-Slit Diffraction Amplitude
 
-The wave number is defined as
+For a uniformly illuminated slit of width $a$, the far-field amplitude is proportional to the sinc function:
 
-\[
-k=\frac{2\pi}{\lambda}.
-\]
-
-For small diffraction angles,
-
-\[
-\sin\theta\approx\tan\theta\approx\frac{x}{L}.
-\]
-
-The transverse wave-vector component is therefore
-
-\[
-k_x\approx\frac{2\pi x}{\lambda L}.
-\]
-
-### 4.2 Single-Slit Diffraction Amplitude
-
-For a rectangular slit of width \(a\), the Fraunhofer diffraction amplitude is proportional to
-
-\[
-A_{\mathrm{slit}}(x)=
+$$
+A_{\mathrm{slit}}(x)
+=
 \operatorname{sinc}
 \left(
 \frac{\pi ax}{\lambda L}
 \right).
-\]
+$$
 
-The normalized sinc function is defined as
+Here, the normalized sinc function is defined as
 
-\[
-\operatorname{sinc}(u)=
+$$
+\operatorname{sinc}(u)
+=
 \begin{cases}
-\dfrac{\sin u}{u}, & u\neq 0,\\[6pt]
+\frac{\sin u}{u}, & u\neq 0,\\
 1, & u=0.
 \end{cases}
-\]
+$$
 
-### 4.3 Double-Slit Probability Amplitude
+This term describes the diffraction envelope associated with the finite slit width.
 
-The total probability amplitude is the coherent superposition of the contributions from the two slits:
+## 4. Double-Slit Wavefunction
 
-\[
-\psi(x)=\psi_1(x)+\psi_2(x).
-\]
+The total probability amplitude is obtained by coherently adding the contributions from the two slits.
 
-For two identical slits with equal illumination,
+The relative phase difference between the two paths is
 
-\[
-\psi(x)\propto
+$$
+\Delta\phi(x)
+=
+\frac{2\pi dx}{\lambda L}.
+$$
+
+Therefore, the total amplitude can be written as
+
+$$
+\psi(x)
+\propto
 A_{\mathrm{slit}}(x)
 \left[
-e^{-i\frac{\pi dx}{\lambda L}}
+e^{-i\pi dx/(\lambda L)}
 +
-e^{i\frac{\pi dx}{\lambda L}}
+e^{i\pi dx/(\lambda L)}
 \right].
-\]
+$$
 
-Using Euler's identity,
+Using the identity
 
-\[
-e^{i\phi}+e^{-i\phi}=2\cos\phi,
-\]
+$$
+e^{-i\theta}+e^{i\theta}=2\cos\theta,
+$$
 
-the total amplitude becomes
+we obtain
 
-\[
-\psi(x)\propto
+$$
+\psi(x)
+\propto
 2A_{\mathrm{slit}}(x)
 \cos\left(\frac{\pi dx}{\lambda L}\right).
-\]
+$$
 
-### 4.4 Detection Probability Density: Born Rule
+## 5. Quantum Probability Density
 
-According to the Born rule, the probability density of detecting a photon at position \(x\) is proportional to the squared modulus of its probability amplitude:
+According to the Born rule, the probability density of detecting a photon at position $x$ is proportional to the squared modulus of the wavefunction:
 
-\[
-P(x)\propto|\psi(x)|^2.
-\]
+$$
+P(x)\propto |\psi(x)|^2.
+$$
 
-The corresponding unnormalized intensity distribution is
+Consequently, the unnormalized interference intensity is
 
-\[
-I(x)=I_0
+$$
+I(x)
+=
+I_0
 \operatorname{sinc}^2
-\left(\frac{\pi ax}{\lambda L}\right)
+\left(
+\frac{\pi ax}{\lambda L}
+\right)
 \cos^2
-\left(\frac{\pi dx}{\lambda L}\right).
-\]
+\left(
+\frac{\pi dx}{\lambda L}
+\right),
+$$
 
-The normalized probability density over the finite detection interval is
+where $I_0$ is an overall intensity scale.
 
-\[
-p(x)=
+The first factor determines the diffraction envelope, while the second factor describes the interference fringes.
+
+For a finite detection-screen interval $[-X_{\max},X_{\max}]$, the normalized probability density is
+
+$$
+p(x)
+=
 \frac{I(x)}
-{\displaystyle\int_{-X_{\max}}^{X_{\max}}I(x')\,dx'}.
-\]
+{\displaystyle
+\int_{-X_{\max}}^{X_{\max}} I(u)\,du
+}.
+$$
 
-The normalization condition is
+Thus,
 
-\[
+$$
 \int_{-X_{\max}}^{X_{\max}}p(x)\,dx=1.
-\]
+$$
 
-This probability density determines the statistical distribution of individual photon detection positions.
+This normalized distribution is used for generating individual photon detection positions.
 
-## 5. Individual Photon Detection
+## 6. Individual Photon Detection
 
-Each photon produces a localized detection event at a transverse position \(x_n\).
+Each photon is detected at a single position on the screen.
 
-The detection position is sampled according to the probability density:
+The detection position of the $n$-th photon is modeled as a random variable sampled from the probability density:
 
-\[
+$$
 x_n\sim p(x).
-\]
+$$
 
-For a total of \(N\) detected photons, the accumulated detection distribution is represented by
+For a sequence of $N$ independent photon detections, the measured positions are
 
-\[
-H_N(x)=\sum_{n=1}^{N}\delta(x-x_n).
-\]
+$$
+\{x_1,x_2,\ldots,x_N\}.
+$$
 
-Here, \(\delta(x-x_n)\) denotes the Dirac delta distribution.
+Each detection contributes one localized event rather than a fraction of a photon distributed across the screen.
 
-As the number of detected photons increases, the empirical distribution approaches the theoretical probability density:
+The interference pattern emerges statistically from the accumulation of these individual detection events.
 
-\[
-\frac{H_N(x)}{N}\longrightarrow p(x).
-\]
+## 7. Sequential Accumulation of Detection Events
 
-This convergence is interpreted through finite spatial-bin estimates.
+The accumulated detection distribution after $N$ photons can be represented by
 
-The simulation therefore demonstrates how an interference pattern emerges from the accumulation of individual photon detection events.
+$$
+H_N(x)
+=
+\sum_{n=1}^{N}\delta(x-x_n),
+$$
 
-## 6. Time Evolution of the Detection Pattern
+where $\delta$ denotes the Dirac delta distribution.
 
-In the baseline model, time evolution refers to the sequential accumulation of photon detection events.
+For numerical simulations, the screen is divided into discrete spatial bins. The number of detections in each bin is recorded.
 
-Let \(N(t)\) denote the number of detected photons up to time \(t\).
+As the number of detected photons increases, the normalized empirical distribution approaches the theoretical probability density:
 
-The accumulated detection distribution is
+$$
+\frac{H_N(x)}{N}
+\longrightarrow p(x)
+\qquad
+\text{as }N\rightarrow\infty,
+$$
 
-\[
-H(x,t)=
-\sum_{n=1}^{N(t)}\delta(x-x_n).
-\]
+where the convergence is understood in the statistical sense and, numerically, through appropriately normalized histograms.
 
-The normalized empirical distribution is
+## 8. Photon Counting Statistics
 
-\[
-p_{\mathrm{emp}}(x,t)=
-\frac{H(x,t)}{N(t)},
-\qquad N(t)>0.
-\]
+### 8.1 Spatial Bin Probabilities
 
-The simulation will visualize the development of the detection pattern at successive detection intervals.
+Let the detection screen be divided into $M$ bins.
 
-**Note:** This represents the accumulation of detection events rather than a time-dependent solution of the Schrödinger equation.
+The probability of detecting a photon in bin $i$ is
 
-## 7. Photon Counting Statistics
-
-The detection screen is divided into \(M\) spatial bins.
-
-The probability of detecting a photon in bin \(i\) is
-
-\[
-p_i=
+$$
+p_i
+=
 \int_{x_i}^{x_{i+1}}p(x)\,dx.
-\]
+$$
 
-### 7.1 Multinomial Distribution: Fixed Total Photon Number
+The probabilities satisfy
 
-For a fixed total number \(N\) of detected photons, the joint probability distribution of the bin counts is
+$$
+\sum_{i=1}^{M}p_i=1,
+$$
 
-\[
-P(n_1,\ldots,n_M)=
-\frac{N!}{n_1!\cdots n_M!}
-\prod_{i=1}^{M}p_i^{n_i}.
-\]
+provided that the bins cover the entire modeled screen interval.
 
-The total photon count satisfies
+### 8.2 Multinomial Distribution
 
-\[
+For a fixed total number of $N$ independently detected photons, the probability of observing counts $n_1,\ldots,n_M$ in the corresponding bins is described by the multinomial distribution:
+
+$$
+P(n_1,\ldots,n_M)
+=
+\frac{N!}{n_1!n_2!\cdots n_M!}
+\prod_{i=1}^{M}p_i^{n_i},
+$$
+
+subject to
+
+$$
 \sum_{i=1}^{M}n_i=N.
-\]
+$$
 
-The expected number of photons in bin \(i\) is
+The expected count in bin $i$ is
 
-\[
-\mathbb{
+$$
+\mathbb{E}[n_i]=Np_i.
+$$
+
+The corresponding variance is
+
+$$
+\operatorname{Var}(n_i)
+=
+Np_i(1-p_i).
+$$
+
+### 8.3 Poisson Counting Statistics
+
+If photon arrivals are modeled as an independent Poisson process, the count in bin $i$ can instead be described by
+
+$$
+P(n_i)
+=
+\frac{\mu_i^{n_i}e^{-\mu_i}}{n_i!},
+$$
+
+where $\mu_i$ is the expected number of detections in that bin.
+
+The expected count and variance are both
+
+$$
+\mathbb{E}[n_i]
+=
+\operatorname{Var}(n_i)
+=
+\mu_i.
+$$
+
+The multinomial and Poisson models represent different counting assumptions and are not interchangeable without specifying the photon-arrival model.
+
+## 9. Numerical Validation
+
+The implementation should be tested against the following physical and statistical conditions:
+
+1. **Normalization:** The numerically calculated probability density must integrate to unity over the selected screen interval.
+
+2. **Symmetry:** For identical slits under symmetric illumination, the theoretical distribution must satisfy
+
+$$
+p(-x)=p(x).
+$$
+
+3. **Interference-fringe spacing:** The approximate distance between adjacent interference maxima is
+
+$$
+\Delta x=\frac{\lambda L}{d}.
+$$
+
+4. **Diffraction envelope:** The single-slit envelope must be consistent with the finite slit width.
+
+5. **Statistical convergence:** The simulated detection histogram should approach the theoretical probability distribution as the number of detected photons increases.
+
+6. **Counting statistics:** Numerical count fluctuations should be consistent with the selected multinomial or Poisson model.
+
+## 10. Model Assumptions and Limitations
+
+The baseline model uses the following assumptions:
+
+- Monochromatic photon illumination.
+- Two identical, parallel slits.
+- Coherent contributions from both slits.
+- Uniform illumination across each slit.
+- Fraunhofer diffraction approximation.
+- Independent photon detection events.
+- Ideal detection without detector noise or
