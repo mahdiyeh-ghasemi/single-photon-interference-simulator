@@ -300,3 +300,35 @@ The simulated interference pattern must exhibit the expected sinc-squared diffra
 As the number of detected photons increases, the normalized detection histogram should approach the theoretical probability density.
 
 ### 9.6. Counting Statistics
+
+The simulated photon counts should be consistent with the selected multinomial or Poisson counting model.
+
+## 10. Model Assumptions and Limitations
+
+The baseline model uses the following assumptions:
+
+- Monochromatic photon illumination.
+- Two identical and parallel slits.
+- Uniform illumination across each slit.
+- Coherent superposition of the two slit amplitudes.
+- Fraunhofer diffraction approximation.
+- Independent photon detection events.
+- Ideal detection without detector noise or finite spatial resolution.
+
+The present model does not explicitly include:
+
+- Photon polarization.
+- Detector inefficiency.
+- Environmental decoherence.
+- Which-path measurements.
+- Time-dependent Schrödinger equation simulations.
+
+In particular, sequential accumulation refers to the progressive recording of individual photon detection events. It does not represent the time evolution of the quantum wavefunction.
+
+## 11. Conclusion
+
+This physical model establishes the mathematical foundation for a computational study of single-photon double-slit interference.
+
+It connects the coherent superposition of probability amplitudes and the Born rule with individual photon detection events and statistical counting distributions.
+
+The central objective is to demonstrate how an interference pattern emerges through the accumulation of discrete photon detections, consistent with the probabilistic predictions of quantum mechanics.
