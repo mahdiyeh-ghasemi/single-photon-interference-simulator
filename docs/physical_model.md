@@ -180,8 +180,6 @@ $$
 
 Here, $\delta(x-x_n)$ represents a localized detection event at position $x_n$.
 
-For numerical implementation, the detection screen is divided into discrete spatial bins, and the number of photon detections in each bin is recorded.
-
 For numerical implementation, the detection screen is divided into discrete spatial bins. If $n_i$ photons are detected in a bin of width $\Delta x_i$, the normalized histogram density in that bin is
 
 $$
