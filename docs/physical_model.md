@@ -52,12 +52,12 @@ $$
 
 For a uniformly illuminated slit of width $a$, the far-field diffraction amplitude is proportional to the sinc function.
 
-The single-slit diffraction amplitude is
+The single-slit diffraction amplitude is given by
 
 $$
 A_{\mathrm{slit}}(x)
 =
-\mathrm{sinc}\left(\frac{\pi ax}{\lambda L}\right).
+\mathrm{sinc}\left(\frac{\pi ax}{\lambda L}\right)
 $$
 
 The normalized sinc function is defined as
@@ -65,7 +65,7 @@ The normalized sinc function is defined as
 $$
 \mathrm{sinc}(u)=
 \begin{cases}
-\dfrac{\sin u}{u}, & u\neq 0,\\[6pt]
+\dfrac{\sin(u)}{u}, & u\neq 0,\\[6pt]
 1, & u=0.
 \end{cases}
 $$
