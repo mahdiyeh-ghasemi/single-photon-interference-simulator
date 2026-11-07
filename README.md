@@ -26,6 +26,14 @@ The theoretical probability density is plotted alongside each cumulative histogr
 
 ![Sequential Photon Detection](figures/sequential_photon_detection.png)
 
+### Photon Counting Statistics
+
+This simulation compares two statistical models of photon detection: the multinomial distribution, where the total number of detected photons is fixed, and the Poisson distribution, where photon counts in individual detector bins fluctuate independently.
+
+The simulation compares the measured photon counts and empirical variances with their theoretical predictions over 500 repeated experiments.
+
+![Photon Counting Statistics](figures/photon_counting_statistics.png)
+
 ## Technologies
 
 - Python
