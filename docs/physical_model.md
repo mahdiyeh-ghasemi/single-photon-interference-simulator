@@ -314,7 +314,7 @@ As the number of independent photon detection events increases, the normalized d
 
 For a fixed total number of detected photons, the simulated bin counts should be consistent with multinomial statistics.
 
-For independent Poisson counting, the mean and variance of the counts in each bin should approach one another as the number of repeated trials increases.
+For independent Poisson counting, the sample mean and sample variance of the counts in each bin should become increasingly close to the theoretical Poisson mean $\mu_i$ as the number of repeated trials increases.
 
 These checks provide criteria for assessing the physical consistency and statistical behavior of the numerical simulations.
 
