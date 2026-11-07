@@ -126,18 +126,54 @@ The simulation uses this principle to demonstrate the gradual formation of the i
 
 ## 8. Photon Counting Statistics
 
-Photon counting statistics describe the fluctuations in the number of detected photons.
+Photon counting statistics describe the fluctuations in the number of detected photons across spatial detector bins.
 
-For a fixed total number of detected photons distributed among several spatial bins, the appropriate statistical model is the multinomial distribution.
+For a fixed total number of detected photons $N$ distributed among $M$ detector bins, the counts follow a multinomial distribution.
 
-When photon arrivals are independently described by a Poisson process, the number of detections in each bin can instead be modeled using Poisson statistics.
+The joint probability of observing counts $n_1,n_2,\ldots,n_M$ is:
 
-These two descriptions provide complementary approaches to studying photon detection:
+$$
+P(n_1,\ldots,n_M)=
+\frac{N!}{n_1!n_2!\cdots n_M!}
+\prod_{i=1}^{M}p_i^{n_i}
+$$
 
-- Multinomial statistics: fixed total number of detected photons.
-- Poisson statistics: independently fluctuating photon counts.
+where:
 
-The choice of statistical model depends on the assumptions concerning the photon source and detection process.
+$$
+\sum_{i=1}^{M}n_i=N
+$$
+
+The expected count and variance in bin $i$ are:
+
+$$
+\mathbb{E}[n_i]=Np_i
+$$
+
+$$
+\mathrm{Var}(n_i)=Np_i(1-p_i)
+$$
+
+In contrast, when photon counts in different detector bins are modeled as independent Poisson random variables, the count in bin $i$ follows:
+
+$$
+P(n_i)=\frac{\mu_i^{n_i}e^{-\mu_i}}{n_i!}
+$$
+
+where $\mu_i$ is the expected number of photons in that bin.
+
+For a Poisson distribution, the mean and variance are equal:
+
+$$
+\mathbb{E}[n_i]=\mathrm{Var}(n_i)=\mu_i
+$$
+
+These two statistical models describe different counting conditions:
+
+- **Multinomial statistics:** The total number of detected photons is fixed, so counts across bins are statistically dependent.
+- **Poisson statistics:** Counts in different bins are independent, and the total number of detected photons can fluctuate.
+
+The simulation compares the empirical counting variances with their theoretical predictions over repeated experiments.
 
 ## 9. Connection Between Theory and Numerical Simulation
 
