@@ -177,16 +177,34 @@ The simulation compares the empirical counting variances with their theoretical 
 
 ## 9. Connection Between Theory and Numerical Simulation
 
-The theoretical concepts described in this document are implemented through the following computational steps:
+The theoretical concepts described in this document are implemented through three complementary numerical simulations.
 
-1. Calculate the theoretical double-slit probability distribution.
+**Simulation 1: Single-Photon Interference Pattern**
+
+1. Calculate the theoretical double-slit probability density.
 2. Normalize the probability density over the detection-screen interval.
 3. Generate individual photon detection positions using random sampling.
-4. Accumulate detection events to construct spatial histograms.
-5. Compare the simulated distributions with the theoretical prediction.
-6. Analyze photon counting fluctuations using multinomial and Poisson models.
+4. Construct a spatial histogram of the accumulated detection events.
+5. Compare the simulated distribution with the theoretical probability density.
 
-The numerical implementation is designed to connect the fundamental principles of quantum interference with observable statistical behavior.
+**Simulation 2: Sequential Photon Detection**
+
+1. Generate a sequence of individual photon detection events.
+2. Accumulate the detection positions sequentially.
+3. Construct cumulative histograms at selected detection counts.
+4. Examine how the interference pattern becomes clearer as the number of detected photons increases.
+
+**Simulation 3: Photon Counting Statistics**
+
+1. Divide the detection-screen interval into spatial bins.
+2. Calculate the probability associated with each bin.
+3. Generate photon counts using multinomial and Poisson statistical models.
+4. Repeat the simulations to estimate empirical counting variances.
+5. Compare the empirical variances with their theoretical predictions.
+
+Together, these simulations connect quantum probability amplitudes, individual photon detection events, and statistical counting behavior.
+
+The numerical results illustrate how the theoretical probability distribution is reflected in the accumulated measurement statistics.
 
 ## 10. Conclusion
 
