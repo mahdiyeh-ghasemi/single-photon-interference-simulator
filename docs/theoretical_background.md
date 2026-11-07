@@ -44,19 +44,29 @@ This term distinguishes coherent quantum superposition from the addition of inde
 
 ## 4. The Born Rule
 
-The Born rule establishes the relationship between a quantum probability amplitude and the probability of obtaining a measurement outcome.
+The Born rule establishes the relationship between a quantum probability amplitude and the probability density of a measurement outcome.
 
-For a photon detected at position `x`, the probability density is proportional to:
+For a photon detected at position \(x\), the probability density is proportional to the squared modulus of its wavefunction:
 
-`P(x)=|ψ(x)|²`
+\[
+p(x)\propto |\psi(x)|^2
+\]
 
-For a normalized probability distribution:
+For a normalized probability density over a finite detection-screen interval, the expression becomes:
 
-`∫P(x)dx=1`
+\[
+p(x)=\frac{|\psi(x)|^2}{\displaystyle\int_{x_{\min}}^{x_{\max}}|\psi(x)|^2\,dx}
+\]
+
+The normalization condition is:
+
+\[
+\int_{x_{\min}}^{x_{\max}}p(x)\,dx=1
+\]
 
 The Born rule provides the theoretical foundation for generating photon detection positions in the numerical simulation.
 
-Each simulated photon is assigned one detection position according to the probability distribution.
+Each simulated photon is assigned one detection position according to this probability distribution.
 
 ## 5. Single-Photon Interference
 
