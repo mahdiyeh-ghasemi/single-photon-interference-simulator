@@ -54,8 +54,6 @@ For a uniformly illuminated slit of width $a$, the far-field diffraction amplitu
 
 The single-slit diffraction amplitude is given by
 
-The single-slit diffraction amplitude is given by
-
 $A_{\mathrm{slit}}(x)=\mathrm{sinc}\left(\frac{\pi ax}{\lambda L}\right)$
 
 The normalized sinc function is defined as
