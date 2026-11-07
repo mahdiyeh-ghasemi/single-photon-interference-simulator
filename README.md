@@ -44,4 +44,4 @@ The simulation compares the measured photon counts and empirical variances with 
 
 ## Project Status
 
-The initial single-photon interference pattern simulation has been implemented and executed successfully. Further development will include time evolution and photon counting statistics.
+The initial simulation framework has been implemented, including single-photon interference pattern formation, sequential photon detection, and photon counting statistics using multinomial and Poisson models.
