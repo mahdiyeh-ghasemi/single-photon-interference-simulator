@@ -321,30 +321,36 @@ These checks provide criteria for assessing the physical consistency and statist
 
 ## 10. Model Assumptions and Limitations
 
-The baseline model uses the following assumptions:
+The simulation is based on the following assumptions:
 
-- Monochromatic photon illumination.
-- Two identical and parallel slits.
-- Uniform illumination across each slit.
-- Coherent superposition of the two slit amplitudes.
-- Fraunhofer diffraction approximation.
-- Independent photon detection events.
-- Ideal detection without detector noise or finite spatial resolution.
+- **Monochromatic illumination:** All photons have the same wavelength $\lambda$.
+- **Identical slits:** The two slits have equal widths and are illuminated uniformly.
+- **Coherent illumination:** The probability amplitudes associated with the two slits are combined coherently.
+- **Fraunhofer diffraction:** The detector is sufficiently far from the slits for the far-field approximation to be valid.
+- **Independent detection events:** Individual photon detections are statistically independent and follow the same spatial probability distribution.
+- **Ideal detection:** Every incident photon is assumed to be detected, with no detector inefficiency or position uncertainty.
 
-The present model does not explicitly include:
+The current model does not include:
 
-- Photon polarization.
-- Detector inefficiency.
-- Environmental decoherence.
-- Which-path measurements.
-- Time-dependent Schrödinger equation simulations.
+- Photon polarization effects.
+- Partial coherence or environmental decoherence.
+- Which-path measurements or other measurement-induced changes to the interference pattern.
+- Detector inefficiency, dark counts, or finite spatial resolution.
+- Polychromatic illumination or a distribution of photon wavelengths.
+- Time-dependent evolution of the photon wavefunction.
 
-In particular, sequential accumulation refers to the progressive recording of individual photon detection events. It does not represent the time evolution of the quantum wavefunction.
+The sequential detection simulation represents the accumulation of individual photon detection events. It does not numerically solve a time-dependent Schrödinger equation or model the physical time evolution of the wavefunction.
+
+These assumptions define an idealized framework for studying single-photon interference and the statistical formation of an interference pattern.
 
 ## 11. Conclusion
 
-This physical model establishes the mathematical foundation for a computational study of single-photon double-slit interference.
+This physical model describes single-photon interference in a double-slit experiment by connecting coherent probability amplitudes, spatial probability distributions, individual detection events, and photon counting statistics.
 
-It connects the coherent superposition of probability amplitudes and the Born rule with individual photon detection events and statistical counting distributions.
+The theoretical framework establishes the expected interference distribution under the Fraunhofer approximation. Individual photon detections are then modeled as independent random events sampled from the normalized probability density.
 
-The central objective is to demonstrate how an interference pattern emerges through the accumulation of discrete photon detections, consistent with the probabilistic predictions of quantum mechanics.
+By accumulating these detection events, the simulation demonstrates how an interference pattern emerges statistically, even when photons are detected individually.
+
+The multinomial and Poisson counting models provide complementary descriptions of photon detection statistics under fixed-total and fluctuating-total counting conditions.
+
+Together, these components provide a computational framework for exploring the relationship between quantum probability, individual measurement outcomes, and the statistical emergence of interference.
