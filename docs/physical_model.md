@@ -270,43 +270,54 @@ The multinomial and Poisson models therefore describe two different counting con
 
 ## 9. Numerical Validation
 
-The numerical implementation should satisfy the following physical and statistical validation criteria.
+The numerical implementation can be evaluated using the following physical and statistical consistency checks.
 
-### 9.1. Probability Normalization
+### 9.1 Probability Normalization
 
-The numerically calculated probability density must satisfy
+The calculated probability density should satisfy the normalization condition over the detection interval:
 
 $$
-\int_{-X_{\max}}^{X_{\max}}p(x)\,dx\simeq 1.
+\int_{x_{\min}}^{x_{\max}}p(x)\,dx=1.
 $$
 
-### 9.2. Spatial Symmetry
+### 9.2 Symmetry of the Interference Pattern
 
-For identical slits under symmetric illumination, the theoretical distribution must be symmetric around the central axis:
+For two identical slits under symmetric illumination, the theoretical probability distribution should be symmetric about the central axis:
 
 $$
 p(-x)=p(x).
 $$
 
-### 9.3. Interference Fringe Spacing
+### 9.3 Fringe Spacing
 
-The approximate distance between adjacent interference maxima is
+In the Fraunhofer regime, the approximate separation between adjacent interference maxima is
 
 $$
-\Delta x=\frac{\lambda L}{d}.
+\Delta x=\frac{\lambda L}{d},
 $$
 
-### 9.4. Diffraction Envelope
+where $\lambda$ is the photon wavelength, $L$ is the distance to the detection screen, and $d$ is the slit separation.
 
-The simulated interference pattern must exhibit the expected sinc-squared diffraction envelope.
+### 9.4 Diffraction Envelope
 
-### 9.5. Statistical Convergence
+The interference fringes should be modulated by the single-slit diffraction envelope:
 
-As the number of detected photons increases, the normalized detection histogram should approach the theoretical probability density.
+$$
+I(x)\propto
+\mathrm{sinc}^{2}\left(\frac{\pi ax}{\lambda L}\right).
+$$
 
-### 9.6. Counting Statistics
+### 9.5 Statistical Convergence
 
-The simulated photon counts should be consistent with the selected multinomial or Poisson counting model.
+As the number of independent photon detection events increases, the normalized detection histogram should provide an increasingly accurate approximation to the theoretical probability density.
+
+### 9.6 Photon Counting Statistics
+
+For a fixed total number of detected photons, the simulated bin counts should be consistent with multinomial statistics.
+
+For independent Poisson counting, the mean and variance of the counts in each bin should approach one another as the number of repeated trials increases.
+
+These checks provide criteria for assessing the physical consistency and statistical behavior of the numerical simulations.
 
 ## 10. Model Assumptions and Limitations
 
