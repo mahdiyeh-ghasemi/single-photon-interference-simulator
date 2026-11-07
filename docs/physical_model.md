@@ -198,72 +198,75 @@ The progressive formation of the interference pattern is therefore a consequence
 
 ## 8. Photon Counting Statistics
 
-### 8.1. Spatial Bin Probabilities
+Photon detection events can be analyzed statistically by dividing the detection screen into discrete spatial bins.
 
-The detection screen is divided into $M$ spatial bins.
+### 8.1 Spatial Bin Probabilities
 
-The probability that a photon is detected in bin $i$ is
+For a normalized probability density $p(x)$, the probability of detecting a photon within the $i$-th spatial bin is
 
 $$
 p_i=\int_{x_i}^{x_{i+1}}p(x)\,dx.
 $$
 
-For bins covering the entire modeled screen interval, the probabilities satisfy
+For a screen divided into $M$ non-overlapping bins covering the detection interval, the probabilities satisfy
 
 $$
 \sum_{i=1}^{M}p_i=1.
 $$
 
-### 8.2. Multinomial Counting Distribution
+### 8.2 Multinomial Counting Model
 
-For a fixed total number of $N$ independently detected photons, the probability of obtaining counts $n_1,n_2,\ldots,n_M$ in the corresponding bins follows a multinomial distribution:
+When a fixed total number of $N$ independent photons is detected, the bin counts follow a multinomial distribution.
+
+The probability of observing counts $n_1,n_2,\ldots,n_M$ is
 
 $$
 P(n_1,\ldots,n_M)=
 \frac{N!}{n_1!n_2!\cdots n_M!}
-\prod_{i=1}^{M}p_i^{n_i}.
+\prod_{i=1}^{M}p_i^{n_i},
 $$
 
-The total number of detected photons is constrained by
+subject to
 
 $$
 \sum_{i=1}^{M}n_i=N.
 $$
 
-The expected photon count in bin $i$ is
+The expected count and variance in bin $i$ are
 
 $$
-\mathbb{E}[n_i]=Np_i.
+\mathbb{E}[n_i]=Np_i,
 $$
-
-The corresponding variance is
 
 $$
 \mathrm{Var}(n_i)=Np_i(1-p_i).
 $$
 
-### 8.3. Poisson Counting Distribution
+Because the total number of detected photons is fixed, the counts in different bins are statistically dependent.
 
-If photon arrivals are modeled as an independent Poisson process, the number of detections in bin $i$ follows a Poisson distribution:
+### 8.3 Poisson Counting Model
 
-$$
-P(n_i)=
-\frac{\mu_i^{n_i}e^{-\mu_i}}{n_i!}.
-$$
-
-Here, $\mu_i$ denotes the expected number of detections in bin $i$.
-
-For a Poisson distribution, the mean and variance are equal:
+When photon detections are modeled as independent counting events with a fluctuating total number, the count in each spatial bin can be described by a Poisson distribution:
 
 $$
-\mathbb{E}[n_i]=\mu_i.
+P(n_i)=\frac{\mu_i^{n_i}e^{-\mu_i}}{n_i!},
+$$
+
+where $\mu_i$ is the expected number of detections in bin $i$.
+
+For a Poisson distribution, the mean and variance are both equal to $\mu_i$:
+
+$$
+\mathbb{E}[n_i]=\mu_i,
 $$
 
 $$
 \mathrm{Var}(n_i)=\mu_i.
 $$
 
-The multinomial and Poisson models correspond to different assumptions about photon counting and arrival statistics.
+In this model, counts in separate bins are statistically independent.
+
+The multinomial and Poisson models therefore describe two different counting conditions: a fixed total number of detected photons and a fluctuating total number of detection events, respectively.
 
 ## 9. Numerical Validation
 
