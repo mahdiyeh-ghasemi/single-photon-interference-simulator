@@ -182,19 +182,17 @@ Here, $\delta(x-x_n)$ represents a localized detection event at position $x_n$.
 
 For numerical implementation, the detection screen is divided into discrete spatial bins, and the number of photon detections in each bin is recorded.
 
-The normalized empirical detection distribution is obtained by dividing the number of detections in each bin by the total number of detected photons and the bin width.
-
-As the number of independent detection events increases, the normalized histogram approaches the theoretical probability density:
+For numerical implementation, the detection screen is divided into discrete spatial bins. If $n_i$ photons are detected in a bin of width $\Delta x_i$, the normalized histogram density in that bin is
 
 $$
-\hat{p}_N(x)\longrightarrow p(x)
+\hat{p}_{N,i}=\frac{n_i}{N\Delta x_i}.
 $$
 
-This convergence is understood statistically and is associated with the law of large numbers.
+Here, $N$ is the total number of detected photons.
 
-The simulation demonstrates this behavior by displaying cumulative detection histograms at different photon counts.
+As the number of independent detection events increases, the normalized histogram provides an increasingly accurate estimate of the probability density averaged over each bin. With sufficiently narrow bins and a sufficiently large number of detections, it approximates the theoretical probability density $p(x)$.
 
-The progressive formation of the interference pattern is therefore a consequence of repeated quantum measurements.
+This statistical behavior is associated with the law of large numbers.
 
 ## 8. Photon Counting Statistics
 
