@@ -16,6 +16,16 @@ The following figure shows the accumulated detection pattern generated from 10,0
 
 ![Single-Photon Interference Pattern](figures/single_photon_pattern.png)
 
+### Sequential Photon Detection
+
+This simulation demonstrates how an interference pattern gradually emerges through the sequential detection of individual photons.
+
+A single sequence of 10,000 photon detection events is generated. The cumulative detection distributions are examined after 10, 100, 500, 1,000, 5,000, and 10,000 detections.
+
+The theoretical probability density is plotted alongside each cumulative histogram to illustrate the statistical emergence of the double-slit interference pattern.
+
+![Sequential Photon Detection](figures/sequential_photon_detection.png)
+
 ## Technologies
 
 - Python
