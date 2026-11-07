@@ -106,4 +106,40 @@ This statistical behavior is consistent with the law of large numbers.
 
 The simulation uses this principle to demonstrate the gradual formation of the interference pattern.
 
-## 8. Photon Counting
+## 8. Photon Counting Statistics
+
+Photon counting statistics describe the fluctuations in the number of detected photons.
+
+For a fixed total number of detected photons distributed among several spatial bins, the appropriate statistical model is the multinomial distribution.
+
+When photon arrivals are independently described by a Poisson process, the number of detections in each bin can instead be modeled using Poisson statistics.
+
+These two descriptions provide complementary approaches to studying photon detection:
+
+- Multinomial statistics: fixed total number of detected photons.
+- Poisson statistics: independently fluctuating photon counts.
+
+The choice of statistical model depends on the assumptions concerning the photon source and detection process.
+
+## 9. Connection Between Theory and Numerical Simulation
+
+The theoretical concepts described in this document are implemented through the following computational steps:
+
+1. Calculate the theoretical double-slit probability distribution.
+2. Normalize the probability density over the detection-screen interval.
+3. Generate individual photon detection positions using random sampling.
+4. Accumulate detection events to construct spatial histograms.
+5. Compare the simulated distributions with the theoretical prediction.
+6. Analyze photon counting fluctuations using multinomial and Poisson models.
+
+The numerical implementation is designed to connect the fundamental principles of quantum interference with observable statistical behavior.
+
+## 10. Conclusion
+
+Single-photon double-slit interference provides a clear example of the probabilistic nature of quantum mechanics.
+
+The phenomenon connects quantum superposition, the Born rule, coherence, and statistical measurement.
+
+The computational simulation provides a way to investigate how individual localized photon detections collectively produce an interference distribution.
+
+This theoretical background supports the physical model and numerical methods developed in the accompanying project.
