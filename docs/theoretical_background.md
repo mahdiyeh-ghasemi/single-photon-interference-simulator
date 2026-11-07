@@ -100,21 +100,29 @@ The baseline simulation considers the coherent case and does not implement which
 
 ## 7. Statistical Emergence of the Interference Pattern
 
-The detection position of each photon is a random variable governed by the quantum probability distribution.
+The detection position of each photon is a random variable governed by the quantum probability density.
 
-For a sequence of independent detections, the measured distribution is constructed by accumulating the individual detection positions.
+For a sequence of independent detection events, the measured distribution is constructed by accumulating individual photon detection positions.
 
-The probability of detecting a photon within a spatial interval is obtained by integrating the probability density over that interval.
+The probability of detecting a photon within a spatial interval is obtained by integrating the normalized probability density over that interval.
 
-For a spatial bin extending from `xᵢ` to `xᵢ₊₁`:
+For a spatial bin extending from $x_i$ to $x_{i+1}$, the corresponding detection probability is:
 
-`pᵢ=∫[xᵢ,xᵢ₊₁]p(x)dx`
+$$
+p_i=\int_{x_i}^{x_{i+1}}p(x)\,dx
+$$
+
+The probabilities of all spatial bins satisfy:
+
+$$
+\sum_{i=1}^{M}p_i=1
+$$
 
 After many detection events, the relative frequency of detections in each bin approaches its theoretical probability.
 
 This statistical behavior is consistent with the law of large numbers.
 
-The simulation uses this principle to demonstrate the gradual formation of the interference pattern.
+The simulation uses this principle to demonstrate the gradual formation of the interference pattern through sequential photon detection.
 
 ## 8. Photon Counting Statistics
 
