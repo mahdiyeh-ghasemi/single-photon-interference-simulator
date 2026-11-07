@@ -172,24 +172,27 @@ The interference pattern emerges from the statistical accumulation of these indi
 
 ## 7. Sequential Accumulation of Photon Detections
 
-The accumulated detection distribution after $N$ photons can be represented mathematically using the Dirac delta distribution:
+The accumulated detection events after $N$ photons can be represented by the empirical detection measure:
 
 $$
-H_N(x)=
-\sum_{n=1}^{N}\delta(x-x_n).
+H_N(x)=\sum_{n=1}^{N}\delta(x-x_n).
 $$
 
-Here, $\delta(x-x_n)$ represents a detection event at position $x_n$.
+Here, $\delta(x-x_n)$ represents a localized detection event at position $x_n$.
 
 For numerical implementation, the detection screen is divided into discrete spatial bins, and the number of photon detections in each bin is recorded.
 
-As the number of detected photons increases, the normalized empirical distribution approaches the theoretical probability density:
+The normalized empirical detection distribution is obtained by dividing the number of detections in each bin by the total number of detected photons and the bin width.
+
+As the number of independent detection events increases, the normalized histogram approaches the theoretical probability density:
 
 $$
-\frac{H_N(x)}{N}\longrightarrow p(x).
+\hat{p}_N(x)\longrightarrow p(x)
 $$
 
-This convergence is understood statistically and is evaluated numerically through normalized detection histograms.
+This convergence is understood statistically and is associated with the law of large numbers.
+
+The simulation demonstrates this behavior by displaying cumulative detection histograms at different photon counts.
 
 The progressive formation of the interference pattern is therefore a consequence of repeated quantum measurements.
 
