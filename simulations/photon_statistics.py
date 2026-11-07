@@ -36,12 +36,17 @@ def main():
     total_photons = 10000
     number_of_trials = 500
 
-    x = np.linspace(-0.01, 0.01, number_of_bins)
+    # Define spatial bins
+    bin_edges = np.linspace(-0.01, 0.01, number_of_bins + 1)
+    x = 0.5 * (bin_edges[:-1] + bin_edges[1:])
+    bin_widths = np.diff(bin_edges)
 
+    # Calculate probability density at bin centers
     probability_density = calculate_probability_density(x)
 
     # Normalize bin probabilities
-    bin_probabilities = probability_density / np.sum(probability_density)
+    bin_probabilities = probability_density * bin_widths
+    bin_probabilities /= np.sum(bin_probabilities)
 
     # Expected counts
     expected_counts = total_photons * bin_probabilities
@@ -172,7 +177,7 @@ def main():
 
     # Save figure
     plt.savefig(
-        "photon_counting_statistics.png",
+        "figures/photon_counting_statistics.png",
         dpi=300,
         bbox_inches="tight"
     )
