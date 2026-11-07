@@ -52,8 +52,7 @@ def calculate_probability_density(
     intensity = np.abs(amplitude) ** 2
 
     # Numerical normalization (compatible with older NumPy)
-    normalization = np.trapz(intensity, x)
-
+    normalization = np.trapezoid(intensity, x)
     if not np.isfinite(normalization) or normalization <= 0:
         raise ValueError("Invalid intensity normalization.")
 
