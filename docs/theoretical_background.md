@@ -208,10 +208,12 @@ The numerical results illustrate how the theoretical probability distribution is
 
 ## 10. Conclusion
 
-Single-photon double-slit interference provides a clear example of the probabilistic nature of quantum mechanics.
+Single-photon double-slit interference provides an important demonstration of the probabilistic nature of quantum mechanics.
 
-The phenomenon connects quantum superposition, the Born rule, coherence, and statistical measurement.
+The phenomenon connects fundamental concepts including quantum superposition, the Born rule, coherence, and statistical measurement.
 
-The computational simulation provides a way to investigate how individual localized photon detections collectively produce an interference distribution.
+The numerical simulations developed in this project investigate three aspects of single-photon interference: the formation of the interference pattern, its gradual emergence through sequential photon detection, and the statistical properties of photon counting.
 
-This theoretical background supports the physical model and numerical methods developed in the accompanying project.
+The results illustrate how individual localized detection events collectively reproduce the probability distribution predicted by quantum theory.
+
+This theoretical background establishes the foundation for the physical model and computational methods implemented in the accompanying project.
