@@ -1,4 +1,5 @@
 # Single-Photon Interference Simulator
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24112808.svg)](https://doi.org/10.5281/zenodo.24112808)
 
 A Python-based simulation of single-photon double-slit interference, including interference pattern formation, sequential photon detection, and photon counting statistics.
 
